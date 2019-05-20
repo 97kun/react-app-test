@@ -1,10 +1,8 @@
 import {createStore, combineReducers} from 'redux'
 
-import {reducer1, reducer2} from './define'
+import * as reducers from './define'
 
-const reducer = combineReducers({
-  reducer1,
-  reducer2
-});
+const reducer = combineReducers(reducers);
+console.log(reducers);
 
 export const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

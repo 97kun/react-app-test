@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {Table, Tag} from 'antd';
 
 const columns = [
@@ -14,10 +15,6 @@ const columns = [
 ];
 
 class TableBox extends Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
@@ -28,4 +25,16 @@ class TableBox extends Component {
   }
 }
 
-export default TableBox;
+const mapStateToProps = state => (
+  {
+    data: state.reducer2
+  }
+);
+
+const mapDispatchToProps ={
+  changeData:data=>{
+
+  }
+}
+
+export default connect(mapStateToProps)(TableBox);
